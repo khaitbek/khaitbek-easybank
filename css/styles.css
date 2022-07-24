@@ -1,7 +1,11 @@
 :root {
     --clr-white: #fff;
     --clr-black: #000;
-    --ff-main: "Poppins", sans-serif;
+    --clr-green-primary: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+    --clr-green-secondary: #30C88F;
+    --clr-primary: #2D314D;
+    --clr-gray: #9597A5;
+    --ff-main: "Public Sans", "Arial", sans-serif;
     --font-weight: 400;
     --fw-bold: 700;
     --fw-medium: 500;
@@ -10,14 +14,44 @@
 }
 
 /*******************************
+    FONTS
+********************************/
+
+/* public-sans-100 - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 100;
+    src: local(''),
+        url('../fonts/public-sans-v14-latin-100.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/public-sans-v14-latin-100.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* public-sans-regular - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/public-sans-v14-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/public-sans-v14-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/*******************************
     GENERAL STYLES
 ********************************/
 
-*,*::before,*::after{
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-html{
+html {
     height: 100%;
     box-sizing: border-box;
 }
@@ -27,7 +61,7 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
-    font-family:var(--ff-main);
+    font-family: var(--ff-main);
     scroll-behavior: smooth;
 }
 
@@ -37,14 +71,25 @@ img {
 }
 
 ul {
-    list-style: none;
+    margin: 0;
     padding-left: 0;
+    list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    color: var(--clr-primary);
+}
+
+p {
+    color: var(--clr-gray);
+}
 
 h1,
 h2,
@@ -54,14 +99,14 @@ p {
     margin: 0;
 }
 
-.btn{
+.btn {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
 .container {
-    width: 1240px;
+    width: 1150px;
     margin-right: auto;
     margin-left: auto;
     padding-right: 20px;
@@ -79,26 +124,107 @@ p {
 }
 
 /* sticky footer */
-.site-main{
+.site-main {
     flex-grow: 1;
 }
 
-.text-black{
+.text-black {
     color: var(--clr-black);
 }
 
-.text-white{
+.text-white {
     color: var(--clr-white);
 }
 
-.fw-bold{
+.fw-bold {
     font-weight: var(--fw-bold);
 }
 
-.fw-medium{
+.fw-medium {
     font-weight: var(--fw-medium);
 }
 
-.d-flex{
+.fw-100 {
+    font-weight: 100;
+}
+
+.d-flex {
     display: flex;
+}
+
+.btn-success {
+    display: inline-block;
+    padding: 8px 36px;
+    background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+    border-radius: 22px;
+    color: var(--clr-white);
+    transition: opacity var(--transition-time) ease;
+    -webkit-transition: opacity var(--transition-time) ease;
+    -moz-transition: opacity var(--transition-time) ease;
+    -ms-transition: opacity var(--transition-time) ease;
+    -o-transition: opacity var(--transition-time) ease;
+}
+
+.btn-success:active {
+    opacity: 0.4;
+}
+
+/*******************************
+    HEADER
+********************************/
+
+.site-header {}
+
+.site-header__wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation__list {
+    gap: 30px;
+}
+
+.navigation__link {
+    display: inline-block;
+    padding: 33px 0;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.107692px;
+    color: var(--clr-primary);
+    border-bottom: 4px solid transparent;
+}
+
+.navigation__link:active {
+    border-color: var(--clr-green-secondary);
+}
+
+/*******************************
+    HERO
+********************************/
+
+.hero {
+    padding-top: 145px;
+    padding-bottom: 250px;
+    background-image: url("../images/hero-bg.svg");
+    background-size: 1371px 1037px;
+    background-repeat: no-repeat;
+    background-position: left calc(50% + 550px) top -250px;
+}
+
+.hero__wrapper {
+    width: min(450px, 50%);
+}
+
+.hero__title {
+    margin-bottom: 24px;
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -1px;
+}
+
+.hero__text {
+    margin-bottom: 36px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.28125px;
 }
