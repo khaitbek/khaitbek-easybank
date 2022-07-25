@@ -190,11 +190,12 @@ p {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.107692px;
-    color: var(--clr-primary);
+    color: var(--clr-gray);
     border-bottom: 4px solid transparent;
 }
 
 .navigation__link:hover{
+    color: var(--clr-black);
     border-color: var(--clr-green-secondary);
 }
 
@@ -350,6 +351,11 @@ p {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.285714px;
+    cursor: pointer;
+}
+
+.articles__item__title:hover{
+    color: var(--clr-green-secondary);
 }
 
 .articles__item__text {
