@@ -204,8 +204,9 @@ p {
 ********************************/
 
 .hero {
+    position: relative;
     padding-top: 145px;
-    padding-bottom: 250px;
+    padding-bottom: 441px;
     background-image: url("../images/hero-bg.svg");
     background-size: 1371px 1037px;
     background-repeat: no-repeat;
@@ -235,6 +236,7 @@ p {
 ********************************/
 
 .features {
+    margin-top: -260px;
     padding: 96px 0;
     background-color: #F4F5F7;
 }
