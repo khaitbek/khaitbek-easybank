@@ -272,7 +272,23 @@ p {
     width: 72px;
     height: 72px;
     margin-bottom: 40px;
+    
+}
+
+.features__item:nth-child(1)::before{
     background-image: url("../images/features/Group\ 21.svg");
+}
+
+.features__item:nth-child(2)::before{
+    background-image: url("../images/features/Group\ 22.svg");
+}
+
+.features__item:nth-child(3)::before{
+    background-image: url("../images/features/Group\ 23.svg");
+}
+
+.features__item:nth-child(4)::before{
+    background-image: url("../images/Group\ 20.svg");
 }
 
 .features__item__title {
@@ -313,6 +329,7 @@ p {
 .articles__item {
     position: relative;
     padding: 225px 24px 24px 24px;
+    background-color: var(--clr-white);
 }
 
 .articles__item::before {
